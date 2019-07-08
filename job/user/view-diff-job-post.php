@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Table with Database</title>
+	
+	
+	
+	<style>
+  table {
+   border-collapse: collapse;
+   width: 100%;
+   color: #588c7e;
+   font-family: monospace;
+   font-size: 25px;
+   text-align: left;
+     } 
+  th {
+   background-color: #588c7e;
+   color: white;
+    }
+  tr:nth-child(even) {background-color: #f2f2f2}
+ </style>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</head>
+
+<body>
+
+
+
+
+ <div class="container">
+   
+   <div class="row">
+   
+   <div class="col-md-12">
+   
+   <div class="table-responsive">
+   
+   <table class="table table-striped">
+
+
+
+
+
+   <table> 
+	<tr>
+	     <th>Job ID</th>
+		 
+	    <th>Job Name</th>
+		
+		<th>Job Description</th>
+		
+		<th>Minimum Salary</th>
+		
+		<th>Maximum Salary</th>
+		
+		<th>Experience Required</th>
+		
+		<th>Qualification Required</th>
+		
+		<th>Job Post Created Date</th>
+		
+	</tr>
+	
+	
+	
+	    <?php
+		
+		    $conn = mysqli_connect( "localhost" , "root" , "" , "job");
+		     
+			 if($conn-> connect_error){
+				 
+				 die("Connection Failed :" . $conn-> connect_error);
+				 
+				 
+			 }
+		
+		
+		$sql = "SELECT * from job_post";
+		
+		$result = $conn-> query ($sql);
+		
+		
+		
+		if($result -> num_rows >0){
+			
+			
+			while($row = $result->fetch_assoc()){
+				
+				echo "<tr><td>" . $row["id_jobpost"]."</td><td>" .
+				                  $row["jobtitle"]."</td><td>".
+				                  $row["description"]."</td><td>" .
+				                  $row["minimumsalary"]."</td><td>".
+				                  $row["maximumsalary"]."</td><td>".
+			                      $row["experiencerequired"]."</td><td>".
+				                  $row["qualificationrequired"]."</td><td>" .
+			                      $row["createat"]."</td><tr>";
+				
+				
+			}
+			
+			
+			echo "</table>";
+			
+			
+		}
+		
+		else{
+			
+			echo "0 result";
+			
+			
+			
+		}
+		
+		$conn->close();
+		
+		?>
+	
+	
+	
+	
+	
+  </table>
+  
+  
+  
+  
+
+</body>
+
+</html>
+
+
+
+
+		 <script type="text/javascript">
+function googleTranslateElementInit() {
+new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+}
+</script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>

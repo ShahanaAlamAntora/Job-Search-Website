@@ -1,0 +1,75 @@
+
+		body {
+		    margin: 0;
+
+		    color: gray; 
+		    
+		}
+
+
+		
+
+		div.div2
+		{
+			width: 50%;
+			height: 500px;
+			color:white;
+			background-color: black;
+			float:left;
+
+				
+		}
+
+		div.in2
+		{
+
+			padding: 30px;
+			
+		}
+
+
+		div.div3
+		{
+			width: 50%;
+			height: 500px;
+			color: white;
+			background-color: #A02829;
+
+
+			float:left;
+
+			text-align: right;
+
+		}
+
+
+		div.in3
+		{
+
+			padding: 30px;
+		}
+
+
+
+		div.div4
+		{
+			
+			width: 50%;
+			height: 500px;
+			float:left;
+
+
+		}
+
+		
+		
+
+		
+		div.clear2
+		{
+			clear: left;
+		}
+
+		
+		
+		
